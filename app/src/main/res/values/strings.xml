@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestTask_01</string>
+
+    <string name="url_to_feed">http://abcnews.go.com/abcnews/topstories</string>
+</resources>
