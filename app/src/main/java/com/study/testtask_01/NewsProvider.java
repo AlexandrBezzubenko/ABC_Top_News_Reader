@@ -205,8 +205,8 @@ public class NewsProvider extends ContentProvider {
     }
 
     private boolean isNewsExistsInDB(SQLiteDatabase db, ContentValues vc) {
-        String sql = "SELECT * FROM " + NEWS_TABLE + " WHERE " + NEWS_ITEM_TITLE + " = ? " + "AND " + NEWS_ITEM_PUBDATE + " = ?";
-        String[] selectionArgs = {vc.getAsString(NEWS_ITEM_TITLE), vc.getAsString(NEWS_ITEM_PUBDATE)};
+        String sql = "SELECT * FROM " + NEWS_TABLE + " WHERE " + NEWS_ITEM_TITLE + " = ? ";
+        String[] selectionArgs = {vc.getAsString(NEWS_ITEM_TITLE)};
         return db.rawQuery(sql, selectionArgs).getCount() != 0;
     }
 

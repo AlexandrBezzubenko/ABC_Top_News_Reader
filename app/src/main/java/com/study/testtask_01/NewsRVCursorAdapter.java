@@ -1,9 +1,8 @@
 package com.study.testtask_01;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,7 +18,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import static android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
 class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsViewHolder> {
@@ -74,13 +72,14 @@ class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsV
         return cursor;
     }
 
-    class NewsViewHolder extends RecyclerView.ViewHolder {
+    class NewsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CardView newsItemCard;
         ImageView image;
         TextView title;
         TextView description;
         TextView pubDate;
+        String link;
 
         private NewsViewHolder(View itemView) {
             super(itemView);
@@ -90,6 +89,7 @@ class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsV
             title = itemView.findViewById(R.id.text_news_title);
             description = itemView.findViewById(R.id.text_news_description);
             pubDate = itemView.findViewById(R.id.text_news_pubdate);
+            itemView.setOnClickListener(this);
         }
 
         private void bindData(Cursor cursor) {
@@ -102,6 +102,7 @@ class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsV
             title.setText(cursor.getString(NEWS_TITLE));
             description.setText(cursor.getString(NEWS_DESCRIPTION));
             pubDate.setText(convertToLocalTime(cursor.getString(NEWS_PUBDATE)));
+            link = cursor.getString(NEWS_LINK);
         }
 
         private String convertToLocalTime(String utcTime) {
@@ -111,6 +112,13 @@ class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsV
             calendar.add(Calendar.MILLISECOND, localOffset);
             DateFormat dateFormat = SimpleDateFormat.getDateTimeInstance();
             return dateFormat.format(calendar.getTime());
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent(context, WebViewActivity.class);
+            i.putExtra("LINK", link);
+            context.startActivity(i);
         }
     }
 }

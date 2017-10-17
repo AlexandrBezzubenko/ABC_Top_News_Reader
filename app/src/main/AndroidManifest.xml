@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".WebViewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
 
         <receiver android:name=".broadcast_receivers.BootCompleteBroadcastReceiver">
             <intent-filter>
@@ -27,7 +30,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".broadcast_receivers.DownloadNotifyBroadcastReceiver" />
+        <receiver android:name=".broadcast_receivers.DownloadNotifyBroadcastReceiver"/>
 
         <service android:name=".DownloadIntentService"/>
 
