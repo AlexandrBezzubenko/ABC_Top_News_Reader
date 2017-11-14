@@ -1,4 +1,4 @@
-package com.study.testtask_01;
+package com.study.abc_top;
 
 import android.content.Context;
 import android.content.Intent;
@@ -95,7 +95,7 @@ class NewsRVCursorAdapter extends RecyclerView.Adapter<NewsRVCursorAdapter.NewsV
         private void bindData(Cursor cursor) {
             int orientation = context.getResources().getConfiguration().orientation;
             if (orientation == ORIENTATION_PORTRAIT) {
-                Picasso.with(context).load(cursor.getString(NEWS_IMAGE_1)).into(image);
+                Picasso.with(context).load(cursor.getString(NEWS_IMAGE_6)).into(image);
             } else {
                 Picasso.with(context).load(cursor.getString(NEWS_IMAGE_6)).into(image);
             }

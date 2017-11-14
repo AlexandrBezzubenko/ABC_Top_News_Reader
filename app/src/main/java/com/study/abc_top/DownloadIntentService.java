@@ -1,4 +1,4 @@
-package com.study.testtask_01;
+package com.study.abc_top;
 
 import android.app.AlarmManager;
 import android.app.IntentService;
@@ -12,7 +12,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.study.testtask_01.broadcast_receivers.DownloadNotifyBroadcastReceiver;
+import com.study.abc_top.broadcast_receivers.DownloadNotifyBroadcastReceiver;
 
 import org.xmlpull.v1.XmlPullParserException;
 

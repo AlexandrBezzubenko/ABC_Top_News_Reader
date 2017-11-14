@@ -1,4 +1,4 @@
-package com.study.testtask_01;
+package com.study.abc_top;
 
 import android.app.LoaderManager;
 import android.content.CursorLoader;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        Uri news_uri = com.study.testtask_01.NewsProvider.NEWS_CONTENT_URI;
+        Uri news_uri = com.study.abc_top.NewsProvider.NEWS_CONTENT_URI;
         return new CursorLoader(this, news_uri, NEWS_SUMMARY_PROJECTION, null, null, NewsProvider.NEWS_ITEM_PUBDATE + " DESC");
     }
 

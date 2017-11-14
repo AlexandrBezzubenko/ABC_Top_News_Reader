@@ -1,4 +1,4 @@
-package com.study.testtask_01.broadcast_receivers;
+package com.study.abc_top.broadcast_receivers;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.study.testtask_01.DownloadIntentService;
+import com.study.abc_top.DownloadIntentService;
 
 /**
  * Class for receiving notifications from system about boot completation.

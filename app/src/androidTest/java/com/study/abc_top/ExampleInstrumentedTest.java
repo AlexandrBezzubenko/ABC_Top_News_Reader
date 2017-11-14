@@ -1,4 +1,4 @@
-package com.study.testtask_01;
+package com.study.abc_top;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

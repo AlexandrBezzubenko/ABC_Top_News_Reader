@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.study.testtask_01">
+    package="com.study.abc_top">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -13,29 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.study.abc_top.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".WebViewActivity"
+        <activity android:name="com.study.abc_top.WebViewActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
 
-        <receiver android:name=".broadcast_receivers.BootCompleteBroadcastReceiver">
+        <receiver android:name="com.study.abc_top.broadcast_receivers.BootCompleteBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".broadcast_receivers.DownloadNotifyBroadcastReceiver"/>
+        <receiver android:name="com.study.abc_top.broadcast_receivers.DownloadNotifyBroadcastReceiver"/>
 
-        <service android:name=".DownloadIntentService"/>
+        <service android:name="com.study.abc_top.DownloadIntentService"/>
 
         <provider
-            android:name="com.study.testtask_01.NewsProvider"
+            android:name="com.study.abc_top.NewsProvider"
             android:authorities="com.study.testtask_10.NewsReader"
             android:enabled="true"
             android:exported="false"/>

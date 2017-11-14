@@ -2,10 +2,10 @@
 <android.support.v7.widget.RecyclerView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/recycler_news_list"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="@color/gray_100"
     tools:context=".MainActivity"
     tools:listitem = "@layout/news_item">
 
